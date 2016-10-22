@@ -32,8 +32,7 @@ public class ChatActivity extends AppCompatActivity {
                 if(event.getAction() == KeyEvent.ACTION_DOWN){
                     if(keyCode == KeyEvent.KEYCODE_ENTER){
                         arrayList.add(chatBox.getText().toString() + " by " + usernameStr + " in " + chatNameStr);
-                        chatLog.setAdapter(new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1, android.R.id.text1, (String[])arrayList.toArray()));
-                        chatLog.notify();
+                        chatLog.setAdapter(new ArrayAdapter<String>(getApplicationContext(), R.layout.list_content, R.id.list_content, arrayList.toArray(new String[arrayList.size()])));
                     }
                 }
                 return true;
